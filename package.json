@@ -1,0 +1,31 @@
+{
+    "name": "discord-bot-template",
+    "version": "1.0.0",
+    "description": "A template for creating discord bots",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/plexidev/discord-bot-template.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/plexidev/discord-bot-template/issues"
+    },
+    "homepage": "https://github.com/plexidev/discord-bot-template#readme",
+    "dependencies": {
+        "@sapphire/framework": "^2.3.0-pr-293.67baf15.0",
+        "@sapphire/plugin-logger": "^2.1.1",
+        "@sapphire/stopwatch": "^1.2.4",
+        "colorette": "^2.0.16",
+        "discord-api-types": "^0.25.2",
+        "discord.js": "^13.3.1",
+        "dotenv": "^10.0.0",
+        "envalid": "^7.2.2",
+        "node-fetch": "^2.6.6",
+        "paster.js": "^1.0.0"
+    }
+}
