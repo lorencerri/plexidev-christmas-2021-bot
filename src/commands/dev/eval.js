@@ -1,5 +1,6 @@
 const { Command, RegisterBehavior } = require('@sapphire/framework');
 const paster = require('paster.js');
+const db = require('quick.db');
 
 class EvalCommand extends Command {
     constructor(context, options) {
