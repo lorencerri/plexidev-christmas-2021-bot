@@ -33,7 +33,8 @@ class messageCreateEvent extends Listener {
             '🧦',
             '🔔',
             '🎶',
-            '🕯️'
+            '🕯️',
+            '🎄'
         ];
 
         const { nickname, guild, user } = newMember;
