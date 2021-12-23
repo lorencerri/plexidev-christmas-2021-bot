@@ -45,7 +45,7 @@ class DeployCommand extends Command {
             .addField('Rewards', `${tada} Christmas 2021 Role`)
             .addField(
                 'Christmas Giveaway',
-                "Until January 1st, sending a message will grant you one ticket into a giveaway! Spamming isn't counted, so don't spam!"
+                "Until January 1st, sending a message will grant you one ticket into a Discord Nitro giveaway! Spamming isn't counted, so don't spam!"
             )
             .addField(
                 'Leaderboard',
