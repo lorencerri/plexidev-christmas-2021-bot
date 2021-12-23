@@ -57,7 +57,7 @@ class messageCreateEvent extends Listener {
         // Update the leaderboard if the time since the last update is greater than 60 seconds
         if (
             !lastLeaderboardUpdateTimestamp ||
-            timeSinceLastLeaderboardUpdate > 60
+            timeSinceLastLeaderboardUpdate > 60000
         ) {
             // Fetch leaderboard message
             const { channelID, messageID } =
