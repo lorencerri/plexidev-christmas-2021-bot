@@ -1,7 +1,5 @@
 ## plexidev-christmas-2021
 
-The bot used for [plexidev](https://discord.gg/plexidev)'s 2021 Christmas event, built using [`@lorencerri/discord-bot-template`](https://github.com/lorencerri/discord-bot-template).
-
-## Gallery
+The bot used for [Plexi Development's](https://discord.gg/plexidev)'s 2021 Christmas event
 
 ![Leaderboard](https://go.plexidev.org/WfesO)
