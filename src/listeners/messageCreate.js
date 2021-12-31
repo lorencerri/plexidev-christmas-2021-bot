@@ -20,6 +20,9 @@ class messageCreateEvent extends Listener {
         // Return if bot
         if (author.bot) return;
 
+		// Return if bot owner
+		if (member.id === process.env.OWNER_ID) return;
+
         // Check last sent message timestamp
         const lastMessageTimestamp = db.get(`lmt_${guild.id}_${author.id}`);
 
@@ -131,7 +134,7 @@ class messageCreateEvent extends Listener {
                 .addField('Rewards', `${tada} Christmas 2021 Role`)
                 .addField(
                     'Christmas Giveaway',
-                    "Until January 1st, sending a message will grant you one ticket into a Discord Nitro giveaway! Spamming isn't counted, so don't spam!"
+                    "Until January 1st, sending a message in <#383430486506340352> will grant you one ticket into a Discord Nitro giveaway! Spamming isn't counted, so don't spam!"
                 )
                 .addField('Leaderboard', text)
                 .setFooter(

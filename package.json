@@ -27,6 +27,7 @@
         "dotenv": "^10.0.0",
         "envalid": "^7.2.2",
         "node-fetch": "^2.6.6",
+        "pastebin-api": "^2.6.1",
         "paster.js": "^1.0.0",
         "quick.db": "^7.1.3",
         "string-progress": "^1.8.9",
