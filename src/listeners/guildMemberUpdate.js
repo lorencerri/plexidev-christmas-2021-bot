@@ -11,6 +11,7 @@ class messageCreateEvent extends Listener {
     }
 
     async run(oldMember, newMember) {
+
         // If old nickname is the same as the new one, return
         if (oldMember.nickname === newMember.nickname) return;
 
@@ -37,8 +38,11 @@ class messageCreateEvent extends Listener {
             '🔔',
             '🎶',
             '🕯️',
-            '🎄'
+            '🎄',
+	    '🎄',
         ];
+
+console.log(`Nickname changed to ${newMember.nickname}`)
 
         const { nickname, guild, user } = newMember;
         if (!nickname) return;
