@@ -12,7 +12,7 @@ class messageCreateEvent extends Listener {
 
     async run(oldMember, newMember) {
 
-// If old nickname is the same as the new one, return
+        // If old nickname is the same as the new one, return
         if (oldMember.nickname === newMember.nickname) return;
 
         const christmasEmojis = [
