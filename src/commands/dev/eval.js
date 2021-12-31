@@ -30,7 +30,7 @@ class EvalCommand extends Command {
     async chatInputRun(interaction) {
         const code = interaction.options.getString('code', true);
         try {
-            const evaled = await eval(code);
+            const evaled = eval(code);
             const clean = await this.clean(interaction.client.token, evaled);
             if (clean.length > 800) {
                 const paste = await paster.create(clean);

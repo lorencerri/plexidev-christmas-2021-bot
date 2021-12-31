@@ -83,6 +83,7 @@ class messageCreateEvent extends Listener {
             }
 
             // Sort & compose leaderboard
+            const total = leaderboard.reduce((cur, val) => cur + val[1], 0)
             leaderboard = [
                 ...leaderboard,
                 ...[...new Array(10)].map(() => ['...', 0])
@@ -132,7 +133,8 @@ class messageCreateEvent extends Listener {
                     'Christmas Giveaway',
                     "Until January 1st, sending a message will grant you one ticket into a Discord Nitro giveaway! Spamming isn't counted, so don't spam!"
                 )
-                .addField('Leaderboard', text);
+                .addField('Leaderboard', text)
+                .setFooter(`There are currently ${total} tickets in the raffle`);
 
             // Send Embed
             leaderboardMessage.edit({
