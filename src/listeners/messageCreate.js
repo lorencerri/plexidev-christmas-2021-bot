@@ -126,15 +126,15 @@ class messageCreateEvent extends Listener {
             // Create Embed
             const embed = new MessageEmbed()
                 .setColor(0x57f287)
-                .setTitle(`🎄 ${guild.name}'s Christmas Event! 🎄`)
+                .setTitle(`Spring Quarter 2022`)
+                //.addField(
+                //    'Missions',
+                //    `${toggleOff} Send 10 messages in <#383430486506340352>\n${toggleOff} Add a Christmas themed emoji to your nickname`
+                //)
+                //.addField('Rewards', `${tada} Christmas 2021 Role`)
                 .addField(
-                    'Missions',
-                    `${toggleOff} Send 10 messages in <#383430486506340352>\n${toggleOff} Add a Christmas themed emoji to your nickname`
-                )
-                .addField('Rewards', `${tada} Christmas 2021 Role`)
-                .addField(
-                    'Christmas Giveaway',
-                    "Until January 1st, sending a message in <#383430486506340352> will grant you one ticket into a Discord Nitro giveaway! Spamming isn't counted, so don't spam!"
+                    'Season Raffle',
+                    "Similar to the Christmas event, sending a message will grant you one ticket into the raffle! Although, with the release of bots, all bot messages will also be counted. The prizes will be announced at the end of the season, although for now it\'s at least Discord Nitro!"
                 )
                 .addField('Leaderboard', text)
                 .setFooter(

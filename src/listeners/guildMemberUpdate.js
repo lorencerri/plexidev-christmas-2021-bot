@@ -11,6 +11,8 @@ class messageCreateEvent extends Listener {
     }
 
     async run(oldMember, newMember) {
+		return;
+
         // If old nickname is the same as the new one, return
         if (oldMember.nickname === newMember.nickname) return;
 

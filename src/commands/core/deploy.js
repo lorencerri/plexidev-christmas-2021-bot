@@ -37,15 +37,15 @@ class DeployCommand extends Command {
         // Create Embed
         const embed = new MessageEmbed()
             .setColor(0x57f287)
-            .setTitle(`🎄 ${interaction.guild.name}'s Christmas Event! 🎄`)
+            .setTitle(`Spring Quarter 2022`)
+            //.addField(
+            //    'Missions',
+            //    `${toggleOff} Send 10 messages in <#383430486506340352>\n${toggleOff} Add a Christmas themed emoji to your nickname`
+            //)
+            //.addField('Rewards', `${tada} Christmas 2021 Role`)
             .addField(
-                'Missions',
-                `${toggleOff} Send 10 messages in <#383430486506340352>\n${toggleOff} Add a Christmas themed emoji to your nickname`
-            )
-            .addField('Rewards', `${tada} Christmas 2021 Role`)
-            .addField(
-                'Christmas Giveaway',
-                "Until January 1st, sending a message will grant you one ticket into a Discord Nitro giveaway! Spamming isn't counted, so don't spam!"
+                'Season Raffle',
+				'Similar to the Christmas event, sending a message will grant you one ticket into the raffle! Although, with the release of bots, all bot messages will also be counted. The prizes will be announced at the end of the season, although for now it\'s at least Discord Nitro!',
             )
             .addField(
                 'Leaderboard',
@@ -53,22 +53,22 @@ class DeployCommand extends Command {
             );
 
         // Create Component
-        const button = new MessageButton()
-            .setCustomId('check-progress')
-            .setLabel('Check Progress')
-            .setStyle('PRIMARY');
+        //const button = new MessageButton()
+        //    .setCustomId('check-progress')
+        //    .setLabel('Check Progress')
+        //    .setStyle('PRIMARY');
 
         // Create Row
-        const row = new MessageActionRow().addComponents([button]);
+        //const row = new MessageActionRow().addComponents([button]);
 
         // Send Embed
         const message = await interaction.channel.send({
             embeds: [embed],
-            components: [row]
+           // components: [row]
         });
 
         // Send Interaction Response
-        interaction.reply({ content: 'Deployed!', ephemeral: true });
+        //interaction.reply({ content: 'Deployed!', ephemeral: true });
 
         // Add MessageID to database
         db.set(`deployed_messageID_${guild.id}`, {
