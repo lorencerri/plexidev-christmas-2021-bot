@@ -26,6 +26,7 @@
         "discord.js": "^13.3.1",
         "dotenv": "^10.0.0",
         "envalid": "^7.2.2",
+        "jspaste": "^9.0.6",
         "node-fetch": "^2.6.6",
         "pastebin-api": "^2.6.1",
         "paster.js": "^1.0.0",

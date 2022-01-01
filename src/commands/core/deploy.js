@@ -40,7 +40,7 @@ class DeployCommand extends Command {
             .setTitle(`🎄 ${interaction.guild.name}'s Christmas Event! 🎄`)
             .addField(
                 'Missions',
-                `${toggleOff} Send 10 messages in the server\n${toggleOff} Add a Christmas themed emoji to your nickname`
+                `${toggleOff} Send 10 messages in <#383430486506340352>\n${toggleOff} Add a Christmas themed emoji to your nickname`
             )
             .addField('Rewards', `${tada} Christmas 2021 Role`)
             .addField(
