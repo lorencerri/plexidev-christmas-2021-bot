@@ -1,6 +1,11 @@
 const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js');
 const { Command, RegisterBehavior } = require('@sapphire/framework');
+<<<<<<< HEAD
 const JSP = require('jspaste');
+=======
+const PasteClient = require('pastebin-api').default;
+const client = new PasteClient(process.env.PASTEBIN_KEY);
+>>>>>>> b881e6d73e22fae917284c3a79355fa17daba209
 const db = require('quick.db');
 
 class WinnerCommand extends Command {
@@ -29,7 +34,7 @@ class WinnerCommand extends Command {
 
         // Fetch Emojis
         const tada = this.getEmojiByName(emojis, 'tada');
-		const ticket = this.getEmojiByName(emojis, 'ticket');
+        const ticket = this.getEmojiByName(emojis, 'ticket');
 
         // Compile Array of Tickets
         const messages = db.get(`messages_${guild.id}`) || {};
@@ -43,9 +48,20 @@ class WinnerCommand extends Command {
         const winningIndex = Math.floor(Math.random() * tickets.length);
         const winner = tickets[winningIndex];
 
+<<<<<<< HEAD
 		// Creating Paste of Tickets
 		const data = await JSP.publish(JSON.stringify(tickets, null, 2));
 		const { url } = data;
+=======
+        // Creating Pastebin of Tickets
+        const url = await client.createPaste({
+            code: JSON.stringify(tickets, null, 2),
+            expireDate: 'N',
+            format: 'javascript',
+            name: 'tickets.json',
+            publicity: 0
+        });
+>>>>>>> b881e6d73e22fae917284c3a79355fa17daba209
 
         // Create Embed
         const embed = new MessageEmbed()
@@ -55,19 +71,28 @@ class WinnerCommand extends Command {
             )
             .addField(
                 'Missions',
-                `This holiday, **\`${Object.keys(messages).length}\`** members partially completed the missions, while **\`${
+                `This holiday, **\`${
+                    Object.keys(messages).length
+                }\`** members partially completed the missions, while **\`${
                     guild.roles.cache.find(r => r.name === 'Christmas 2021')
                         .members.size
                 }\`** fully completed them to obtain the **\`Christmas 2021\`** role!`
             )
             .addField(
                 'Christmas Giveaway',
-                `${ticket} There were ${tickets.length} tickets in the pool.\n${tada} The winning ticket of #${winningIndex} was by <@${winner}> (${((100 * messages[winner]) / tickets.length).toFixed(2)}%)!\n\n*You can view all of the tickets [here](${url})*`
+                `${ticket} There were ${
+                    tickets.length
+                } tickets in the pool.\n${tada} The winning ticket of #${winningIndex} was by <@${winner}> (${(
+                    (100 * messages[winner]) /
+                    tickets.length
+                ).toFixed(
+                    2
+                )}%)!\n\n*You can view all of the tickets [here](${url})*`
             );
 
         // Send Embed
         await interaction.channel.send({
-            embeds: [embed],
+            embeds: [embed]
         });
 
         // Send Interaction Response

@@ -20,8 +20,8 @@ class messageCreateEvent extends Listener {
         // Return if bot
         if (author.bot) return;
 
-		// Return if bot owner
-		if (member.id === process.env.OWNER_ID) return;
+        // Return if bot owner
+        if (member.id === process.env.OWNER_ID) return;
 
         // Check last sent message timestamp
         const lastMessageTimestamp = db.get(`lmt_${guild.id}_${author.id}`);
