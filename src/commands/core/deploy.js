@@ -45,7 +45,7 @@ class DeployCommand extends Command {
             //.addField('Rewards', `${tada} Christmas 2021 Role`)
             .addField(
                 'Season Raffle',
-				'Similar to the Christmas event, sending a message will grant you one ticket into the raffle! Although, with the release of bots, all bot messages will also be counted. The prizes will be announced at the end of the season, although for now it\'s at least Discord Nitro!',
+				'Similar to the Christmas event, sending a message will grant you one ticket into the raffle! Although, with the release of bots, all bot messages will also be counted, counting towards the owner. The prizes will be announced at the end of the season, although for now it\'s at least a couple Discord Nitros for you and your dev team!',
             )
             .addField(
                 'Leaderboard',

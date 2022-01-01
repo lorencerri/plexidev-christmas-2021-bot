@@ -18,10 +18,13 @@ class messageCreateEvent extends Listener {
         const { member, author, guild } = message;
 
         // Return if bot
-        if (author.bot) return;
+        //if (author.bot) return;
 
         // Return if bot owner
-        if (member.id === process.env.OWNER_ID) return;
+        //if (member.id === process.env.OWNER_ID) return;
+
+		// Return on gearbot
+		if (member.id === '349977940198555660') return;
 
         // Check last sent message timestamp
         const lastMessageTimestamp = db.get(`lmt_${guild.id}_${author.id}`);
@@ -134,7 +137,7 @@ class messageCreateEvent extends Listener {
                 //.addField('Rewards', `${tada} Christmas 2021 Role`)
                 .addField(
                     'Season Raffle',
-                    "Similar to the Christmas event, sending a message will grant you one ticket into the raffle! Although, with the release of bots, all bot messages will also be counted. The prizes will be announced at the end of the season, although for now it\'s at least Discord Nitro!"
+                    "Similar to the Christmas event, sending a message will grant you one ticket into the raffle! Although, with the release of bots, all bot messages will also be counted, counting towards the owner. The prizes will be announced at the end of the season, although for now it\'s at least a couple Discord Nitros for you and your dev team!"
                 )
                 .addField('Leaderboard', text)
                 .setFooter(
