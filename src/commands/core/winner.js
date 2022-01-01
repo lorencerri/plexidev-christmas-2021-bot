@@ -1,11 +1,6 @@
 const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js');
 const { Command, RegisterBehavior } = require('@sapphire/framework');
-<<<<<<< HEAD
 const JSP = require('jspaste');
-=======
-const PasteClient = require('pastebin-api').default;
-const client = new PasteClient(process.env.PASTEBIN_KEY);
->>>>>>> b881e6d73e22fae917284c3a79355fa17daba209
 const db = require('quick.db');
 
 class WinnerCommand extends Command {
@@ -48,20 +43,9 @@ class WinnerCommand extends Command {
         const winningIndex = Math.floor(Math.random() * tickets.length);
         const winner = tickets[winningIndex];
 
-<<<<<<< HEAD
-		// Creating Paste of Tickets
-		const data = await JSP.publish(JSON.stringify(tickets, null, 2));
-		const { url } = data;
-=======
-        // Creating Pastebin of Tickets
-        const url = await client.createPaste({
-            code: JSON.stringify(tickets, null, 2),
-            expireDate: 'N',
-            format: 'javascript',
-            name: 'tickets.json',
-            publicity: 0
-        });
->>>>>>> b881e6d73e22fae917284c3a79355fa17daba209
+		    // Creating Paste of Tickets
+		    const data = await JSP.publish(JSON.stringify(tickets, null, 2));
+		    const { url } = data;
 
         // Create Embed
         const embed = new MessageEmbed()
